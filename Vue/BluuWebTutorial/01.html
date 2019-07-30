@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hola mundo con Vue.js</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ title }}</h1>
+            <input type="text" v-model="newFruit" @keyup.enter="addFruit"/>
+            <button @click="addFruit">Add</button>
+            <!-- fruit = variable creada en el for - fruits = array creado en el archivo .js -->
+            <ul>
+                <li v-for="fruit of fruits">
+                    <input type="number" v-model.number="fruit.amount"> - {{fruit.name}}
+                    <button @click="fruit.amount++">+</button>
+                    <span v-if="fruit.amount === 0">Sin stock</span>
+                </li>
+            </ul>
+            <h4>Total: {{sumFruits}}</h4>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+        <script src="01.js"></script>
+    </body>
+</html>

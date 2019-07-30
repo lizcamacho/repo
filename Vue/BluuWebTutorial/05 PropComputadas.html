@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Computed</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <h3>{{message}}</h3>
+            <h3>Invertido: {{inverse}}</h3>
+            <input type="text" class="form-control" v-model="message">
+            <hr>
+            <button class="btn btn-primary" @click="counter++">+</button>
+            <button class="btn btn-danger" @click="counter--">-</button>
+            <h3>{{counter}}</h3>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" :style="{'width': counter+'%'}" 
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                :class="color">
+                    {{counter}}%
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+        <script src="05 PropComputadas.js"></script>
+    </body>
+</html>
